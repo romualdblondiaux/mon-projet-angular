@@ -5,9 +5,10 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <h2>Mes appareils</h2>
-        <h4>Mise à jour : {{ lastUpdate | async | date: 'dd/MM/yyyy H:m:s' }}</h4>
+    <div class="col-12">
+      <div class="row"><h2 class="col-md-6">Mes appareils</h2>
+        <p class="col-md-6 mt-3" style="text-align:right;">Mise à jour : {{ lastUpdate | async | date: 'dd/MM/yyyy H:m:s' }}</p></div>
+
           <ul class="list-group mb-1">
             <app-appareil *ngFor="let appareil of appareils; let i = index"
                           [appareilName]="appareil.name"
