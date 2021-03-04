@@ -14,23 +14,23 @@ export class AppareilService {
     }
   ];
 
-  switchOnAll() {
+  switchOnAll(): void {
     for (const appareil of this.appareils) {
       appareil.status = 'allumé';
     }
   }
 
-  switchOffAll() {
+  switchOffAll(): void {
     for (const appareil of this.appareils) {
       appareil.status = 'éteint';
     }
   }
 
-  switchOnOne(i: number) {
+  switchOnOne(i: number): void {
     this.appareils[i].status = 'allumé';
   }
 
-  switchOffOne(i: number) {
+  switchOffOne(i: number): void {
       this.appareils[i].status = 'éteint';
   }
 

@@ -17,11 +17,11 @@ export class AppareilComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getStatus() {
+  getStatus(): string {
     return this.appareilStatus;
   }
 
-  getColor() {
+  getColor(): string {
     if (this.appareilStatus === 'allumé') {
       return '#02d802';
     } else if (this.appareilStatus === 'éteint') {
@@ -29,12 +29,13 @@ export class AppareilComponent implements OnInit {
     }
   }
 
-  onSwitch() {
+  onSwitch(): void {
     if (this.appareilStatus === 'allumé') {
       this.appareilService.switchOffOne(this.index);
     } else if (this.appareilStatus === 'éteint') {
       this.appareilService.switchOnOne(this.index);
     }
+    console.log(this.index);
 }
 
 }
