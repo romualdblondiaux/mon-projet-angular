@@ -11,7 +11,7 @@ export class AppareilViewComponent implements OnInit {
 
   appareils: any[];
 
-  lastUpdate = new Promise((resolve, reject) => {
+  lastUpdate = new Promise((resolve) => {
     const date = new Date();
     setTimeout(
       () => {
@@ -20,7 +20,14 @@ export class AppareilViewComponent implements OnInit {
     );
   });
 
-  constructor(private appareilService: AppareilService) { }
+  constructor(private appareilService: AppareilService) {
+
+    setTimeout(
+      () => {
+        this.isAuth = true;
+      }, 4000
+    );
+  }
 
   ngOnInit(): void {
     this.appareils = this.appareilService.appareils;
@@ -31,7 +38,7 @@ export class AppareilViewComponent implements OnInit {
   }
 
   onEteindre(): void {
-    if(confirm('Etes-vous sûr de vouloir éteindre tous vos appareils ?')) {
+    if (confirm('Etes-vous sûr de vouloir éteindre tous vos appareils ?')) {
       this.appareilService.switchOffAll();
     } else {
       return null;
