@@ -9,8 +9,8 @@ import { AppareilService } from '../services/appareil.service';
 })
 export class SingleAppareilComponent implements OnInit {
 
-  name: string = 'Appareil';
-  status: string = 'Statut';
+  name = 'Appareil';
+  status = 'Statut';
 
   constructor(private appareilService: AppareilService, private route: ActivatedRoute) { }
 
