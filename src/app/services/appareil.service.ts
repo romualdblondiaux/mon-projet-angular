@@ -49,12 +49,12 @@ export class AppareilService {
     }
   }
 
-  switchOnOne(i: number) {
+  switchOnOne(i: number): void {
     this.appareils[i].status = 'allumé';
     this.emitAppareilSubject();
   }
 
-  switchOffOne(i: number) {
+  switchOffOne(i: number): void {
     this.appareils[i].status = 'éteint';
     this.emitAppareilSubject();
   }
