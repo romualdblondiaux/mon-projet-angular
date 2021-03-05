@@ -23,7 +23,6 @@ export class AppComponent implements OnInit, OnDestroy {
     );
   }
 
-
   ngOnInit(): void {
     const counter = Observable.interval(1000);
     this.counterSubscription = counter.subscribe(
