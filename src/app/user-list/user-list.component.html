@@ -1,4 +1,4 @@
-<ul class="list-group">
+<ul class="list-group mb-3">
   <a routerLink="/new-user">Nouvel utilisateur</a>
   <li class="list-group-item list-group-item-secondary mt-3" *ngFor="let user of users">
     <h3>{{ user.firstName }} {{ user.lastName }}</h3>
@@ -10,3 +10,7 @@
     </p>
   </li>
 </ul>
+<button class="btn btn-primary"
+        (click)="onSave()">Enregistrer l'utilisateur</button>
+<button class="btn btn-warning ml-3"
+        (click)="onFetch()">Récupérer les utilisateurs</button>
